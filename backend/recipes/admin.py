@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.conf import settings
 
 from .models import Recipe, Ingredient, Tag, ShoppingCart, Favorite
 
@@ -14,7 +15,7 @@ class RecipeAdmin(admin.ModelAdmin):
     readonly_fields = (
         'pub_date',
     )
-    empty_value_display = '-пусто-'
+    empty_value_display = settings.EMPTY_FIELDS
 
 
 @admin.register(Ingredient)
@@ -23,7 +24,7 @@ class IngredientAdmin(admin.ModelAdmin):
         'name',
         'measurement_unit'
     )
-    empty_value_display = '-пусто-'
+    empty_value_display = settings.EMPTY_FIELDS
 
 
 @admin.register(Tag)
@@ -33,7 +34,7 @@ class TagAdmin(admin.ModelAdmin):
         'color',
         'slug'
     )
-    empty_value_display = '-пусто-'
+    empty_value_display = settings.EMPTY_FIELDS
 
 
 @admin.register(Favorite)
