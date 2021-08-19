@@ -6,7 +6,6 @@ env = environ.Env()
 
 environ.Env.read_env()
 
-
 EMPTY_FIELDS = '-пусто-'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
