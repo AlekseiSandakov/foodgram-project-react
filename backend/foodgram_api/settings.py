@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'DEFAULT_PARAM')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'localhost', 'web',]
+ALLOWED_HOSTS = ['178.154.203.39', 'localhost', 'web',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
