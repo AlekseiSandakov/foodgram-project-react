@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'DEFAULT_PARAM')
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['84.252.130.70', 'localhost', 'web',]
 
