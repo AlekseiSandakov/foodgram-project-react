@@ -61,7 +61,7 @@ jobs:
           stack_file_name: docker-compose.yml
           script: |
             sudo docker pull leosan/foodgram-project-react:latest
-            sudo docker pull leosan/ffoodgram-project-react_frontend:v1.0
+            sudo docker pull leosan/foodgram-project-react_frontend:v1.0
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env 
