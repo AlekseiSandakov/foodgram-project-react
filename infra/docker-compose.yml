@@ -21,7 +21,7 @@ services:
       - static_value:/code/dj_static/
       - media_value:/code/dj_media/
     env_file:
-      - ../backend/.env
+      - ./backend/.env
 
   frontend:
     build:
