@@ -14,7 +14,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'DEFAULT_PARAM')
 
 DEBUG = True
 
-
 ALLOWED_HOSTS = ['178.154.220.225', 'localhost', 'backend',]
 
 INSTALLED_APPS = [
