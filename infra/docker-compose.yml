@@ -8,12 +8,10 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     restart: always
     env_file:
-      - ../backend/.env
+      - ./.env
 
   backend:
-    build:
-      context: ../backend
-      dockerfile: Dockerfile
+    image: leosan/foodgram-project-react
     restart: always
     depends_on:
       - db
@@ -21,12 +19,10 @@ services:
       - static_value:/code/dj_static/
       - media_value:/code/dj_media/
     env_file:
-      - ../backend/.env
+      - ./.env
 
   frontend:
-    build:
-      context: ../frontend
-      dockerfile: Dockerfile
+    image: leosan/foodgram-project-react
     volumes:
       - ../frontend/:/app/result_build/
     depends_on:
