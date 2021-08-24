@@ -1,6 +1,6 @@
 FROM python:3.8.5
 WORKDIR /code
-COPY . .
-RUN pip install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org
-RUN python manage.py collectstatic --noinput
+COPY requirements.txt /code
+RUN pip3 install -r requirements.txt
+COPY . /code
 CMD gunicorn foodgram_api.wsgi:application --bind 0.0.0.0
