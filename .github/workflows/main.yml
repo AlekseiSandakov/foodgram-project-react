@@ -1,4 +1,4 @@
-name: foodgram-project-react workflow
+name: foodgram
 
 on: [push]
 
@@ -24,8 +24,10 @@ jobs:
         run: flake8 .
 
   build_and_push_to_docker_hub:
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     needs: tests
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -44,6 +46,7 @@ jobs:
         with:
           push: true
           context: ./backend/
+          file: ./backend/Dockerfile
           tags: leosan/foodgram:latest
 
   deploy:
@@ -61,7 +64,7 @@ jobs:
           stack_file_name: docker-compose.yml
           script: |
             sudo docker pull leosan/foodgram:latest
-            sudo docker pull leosan/foodgram_frontend:v1.0
+            sudo docker pull leosan/foodgram_frontend:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
