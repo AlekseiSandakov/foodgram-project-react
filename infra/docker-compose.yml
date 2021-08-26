@@ -22,7 +22,7 @@ services:
       - ./.env
 
   frontend:
-    image: leosan/foodgram-frontend:latest
+    image: leosan/foodgram:latest
     volumes:
       - ../frontend/:/app/result_build/
     depends_on:
