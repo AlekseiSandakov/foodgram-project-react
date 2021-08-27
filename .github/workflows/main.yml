@@ -45,6 +45,13 @@ jobs:
           context: ./backend/
           file: ./backend/Dockerfile
           tags: leosan/foodgram:latest
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          context: ./frontend/
+          file: ./frontend/Dockerfile
+          tags: leosan/foodgram-frontend:latest
 
   deploy:
     runs-on: ubuntu-latest
