@@ -46,10 +46,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'foodgram_api.urls'
 
 REST_FRAMEWORK = {
+    'SEARCH_PARAM': 'name',
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
