@@ -12,7 +12,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'DEFAULT_PARAM')
 
-
 DEBUG = False
 
 ALLOWED_HOSTS = ['178.154.220.225', 'localhost', 'backend',]
